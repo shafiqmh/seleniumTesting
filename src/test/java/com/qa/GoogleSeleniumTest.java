@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -30,18 +31,25 @@ public class GoogleSeleniumTest {
 
     @Test
     public void searchTest() throws InterruptedException {
-        driver.get("http://google.com");
-        Thread.sleep(2000);
+        driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
+        Thread.sleep(1000);
         WebElement searchField = driver.findElement(By.name("q"));
         assertTrue(searchField.isDisplayed());
         searchField.sendKeys("funny cat pictures");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         WebElement submitButton = driver.findElement(By.name("btnK"));
         submitButton.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         WebElement linkToBiggerPicture = driver.findElementByLinkText("Images for funny cat");
         linkToBiggerPicture.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
+        WebElement clickAPicture = driver.findElementById("D-PLcqeLGxB5CM:");
+        clickAPicture.click();
+        Thread.sleep(3000);
+//        WebElement scroll = driver.findElementByName("gsr");
+//        scroll.sendKeys(Keys.chord(Keys.PAGE_DOWN));
+//        Thread.sleep(6000);                 (this doesnt quite work)
+
     }
 
 }
