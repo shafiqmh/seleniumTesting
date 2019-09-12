@@ -15,12 +15,16 @@ public class GoogleSeleniumTest {
     private ChromeDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         System.setProperty(
                 "webdriver.chrome.driver",
                 "C:\\Users\\Admin\\IdeaProjects\\seleniumTesting\\src\\test\\java\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+
+        // initialize ExtentReports with a file path
+        ExtentReports extent = new ExtentReports(filePath, replaceExisting);
+        ExtentTest test;
     }
 
     @After
@@ -92,6 +96,7 @@ public class GoogleSeleniumTest {
 
 
 
+
 //        pageDown.sendKeys(Keys.PAGE_DOWN);
 //        Thread.sleep(1000);
 
@@ -100,12 +105,6 @@ public class GoogleSeleniumTest {
     }
 
 }
-
-
-
-
-
-
 
 
 
